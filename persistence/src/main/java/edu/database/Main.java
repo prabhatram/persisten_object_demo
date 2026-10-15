@@ -33,16 +33,19 @@ public class Main {
         System.out.println(restored); */
 
         /* THE FOLLOWING CODE TESTS THE UPDATE FUNCTIONALITY */
-        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN TEST THE UPDATE FUNCTIONALITY */
-        Customer restored = repository.findById(1);
+        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN UNCOMMENT THE FOLLOWING LINES TO TEST THE UPDATE FUNCTIONALITY 
+        CHANGE THE ID TO A DIFFERENT ONE, ONLY IF IT EXISTS IN THE DATABASE*/
+        
+        /* Customer restored = repository.findById(1);
         restored.changeEmail("alice.new@example.com");
         repository.update(restored);
-
-        System.out.println("Updated: " + repository.findById(1));
+        System.out.println("Updated: " + repository.findById(1)); */
 
         /* THE FOLLOWING CODE TESTS THE DELETE FUNCTIONALITY */
-        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN TEST THE DELETE FUNCTIONALITY */
-        repository.delete(1);
-        System.out.println("After deletion: " + repository.findById(1));
+        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN UNCOMMENT THE FOLLOWING LINES TO TEST THE DELETE FUNCTIONALITY 
+        CHANGE THE ID TO A DIFFERENT ONE, ONLY IF IT EXISTS IN THE DATABASE */
+
+        /* repository.delete(1);
+        System.out.println("After deletion: " + repository.findById(1)); */
     }
 }
