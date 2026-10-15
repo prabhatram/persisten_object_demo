@@ -4,30 +4,32 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        /* COMMENT THE FOLLOWING WHEN TESTING THE RESTORE FUNCTIONALITY */
         CustomerRepository repository = new CustomerRepository();
-
-        //Create a Java object in memory
+        
         Customer customer = new Customer(
-            "Bob",
-            "bob@example.com"
+            "Martha",
+            "martha@example.com"
         );
 
         System.out.println("Before saving:");
         System.out.println(customer);
 
-        //Persist the object's state
+        
         repository.save(customer);
 
         System.out.println("After saving:");
         System.out.println(customer);
 
-        // 3. Retrieve a new object from PostgreSQL
-        Customer restored = repository.findById(customer.getId());
+        
+        // UNCOMMENT THE FOLLOWING LINES TO TEST THE RESTORE FUNCTIONALITY
+        // DO IT ONLY AFTER RUNNING THE PROGRAM ONCE TO CREATE THE DATABASE RECORD
+        // THEN CLOSE THE PROGRAM AND RUN IT AGAIN TO SEE THE RESTORE FUNCTIONALITY IN ACTION
+        
+        /* CustomerRepository repository = new CustomerRepository();
+        Customer restored = repository.findById(1);
 
         System.out.println("Restored object:");
-        System.out.println(restored);
-
-        // 4. Compare object identities
-        System.out.println("Same Java object? " + (customer == restored));
+        System.out.println(restored); */
     }
 }
