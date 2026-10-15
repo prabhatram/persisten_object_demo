@@ -31,5 +31,18 @@ public class Main {
 
         System.out.println("Restored object:");
         System.out.println(restored); */
+
+        /* THE FOLLOWING CODE TESTS THE UPDATE FUNCTIONALITY */
+        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN TEST THE UPDATE FUNCTIONALITY */
+        Customer restored = repository.findById(1);
+        restored.changeEmail("alice.new@example.com");
+        repository.update(restored);
+
+        System.out.println("Updated: " + repository.findById(1));
+
+        /* THE FOLLOWING CODE TESTS THE DELETE FUNCTIONALITY */
+        /* CREATE AND PERSISTS AS MANY OBJECTS FIRST, AND THEN TEST THE DELETE FUNCTIONALITY */
+        repository.delete(1);
+        System.out.println("After deletion: " + repository.findById(1));
     }
 }
